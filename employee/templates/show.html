@@ -13,7 +13,11 @@
         <th>Employee ID</th>  
         <th>Employee Name</th>  
         <th>Employee Email</th>  
-        <th>Employee Contact</th>  
+        <th>Father Name</th>  
+        <th> Age</th>  
+        <th> Contact</th> 
+        <th> Address</th>  
+        <th> Image </th>  
         <th>Actions</th>  
     </tr>  
     </thead>  
@@ -22,8 +26,14 @@
     <tr>  
         <td>{{ employee.eid }}</td>  
         <td>{{ employee.ename }}</td>  
-        <td>{{ employee.eemail }}</td>  
+        <td>{{ employee.eemail }}</td> 
+        <td>{{ employee.father_name }}</td>  
+        <td>{{ employee.age }}</td>  
         <td>{{ employee.econtact }}</td>  
+        <td>{{ employee.address }}</td>  
+        {% if employee.photo %}
+        <td><img src="{{employee.photo.url}}" alt="" width="150" height="150"></td>  
+        {% endif %}
         <td>  
             <a href="/edit/{{ employee.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
             <a href="/delete/{{ employee.id }}">Delete</a>  

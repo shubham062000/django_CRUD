@@ -3,6 +3,6 @@ from employee.models import Employee
 
 # Register your models here.
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display=['eid','ename','eemail','econtact']
+    list_display=['eid','ename','eemail','econtact','father_name']
 
 admin.site.register(Employee,EmployeeAdmin)

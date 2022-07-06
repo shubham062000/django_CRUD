@@ -15,7 +15,7 @@ def emp(request):
         form = EmployeeForm()  
     return render(request,'index.html',{'form':form})  
 def show(request):  
-    employees = Employee.objects.all()  
+    employees = Employee.objects.all()
     return render(request,"show.html",{'employees':employees})  
 def edit(request, id):  
     employee = Employee.objects.get(id=id)  
