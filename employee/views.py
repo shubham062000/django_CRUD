@@ -4,7 +4,7 @@ from employee.models import Employee
 # Create your views here.  
 def emp(request):  
     if request.method == "POST":  
-        form = EmployeeForm(request.POST)  
+        form = EmployeeForm(request.POST or None , request.FILES or None) 
         if form.is_valid():  
             try:  
                 form.save()  
