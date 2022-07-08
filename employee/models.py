@@ -10,7 +10,7 @@ class Employee(models.Model):
     ename = models.CharField(max_length=100)  
     eemail = models.EmailField()  
     econtact = models.CharField(max_length=15)  
-    photo = models.ImageField(upload_to='images/',null= True)
+    photo = models.ImageField(upload_to='images/',null= True, blank=True)
     father_name = models.CharField(max_length=70,null= True) 
     age = models.IntegerField(default=True)
     address= models.CharField(max_length=350,null= True)
