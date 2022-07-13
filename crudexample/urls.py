@@ -22,11 +22,11 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [  
     # path('admin/', admin.site.urls),  
-    path('emp', views.emp),  
-    path('show',views.show),    
+    path('emp', views.emp, name='emp'),  
+    path('show',views.show, name='show'),    
     path('update/<int:id>', views.update),  
     path('delete/<int:id>', views.destroy), 
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
-    path('accounts/', include(('accounts.urls', 'accounts'))),
-    path('accounts/', include('django.contrib.auth.urls')), 
+    path('accounts/', include(('accounts.urls', 'accounts')),name='accounts'),
+    path('accounts/', include('django.contrib.auth.urls'),name='accounts'), 
 ] +static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)
