@@ -35,8 +35,8 @@
         <td><img src="{{employee.photo.url}}" alt="" width="150" height="150"></td>  
         {% endif %}
         <td>  
-            <a href="/update/{% url 'detail' %}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{% url 'delete' %}">Delete</a>  
+            <a href="{% url 'detail' employee.id %}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="{% url 'delete' employee.id %}">Delete</a>  
         </td>  
     </tr>  
 {% endfor %}  
